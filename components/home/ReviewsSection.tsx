@@ -90,7 +90,8 @@ export function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="flex flex-col bg-zinc-900 rounded-xl border border-zinc-800 p-6 hover:border-zinc-700 transition-colors duration-200"
+              whileHover={{ y: -4 }}
+              className="flex flex-col bg-zinc-900 rounded-xl border border-zinc-800 p-6 hover:border-zinc-700 hover:shadow-lg hover:shadow-black/30 transition-[border-color,box-shadow] duration-200"
             >
               {/* Stars */}
               <Stars count={rating} />

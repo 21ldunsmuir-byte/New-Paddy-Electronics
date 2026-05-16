@@ -77,11 +77,12 @@ export function ServicesSection() {
               key={title}
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -4 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
             >
               <Link href={href} className="group block h-full">
-                <div className="relative h-full p-6 rounded-xl bg-zinc-950 border border-zinc-800 hover:border-zinc-700 transition-all duration-200">
+                <div className="relative h-full p-6 rounded-xl bg-zinc-950 border border-zinc-800 hover:border-zinc-700 hover:shadow-lg hover:shadow-black/30 transition-[border-color,box-shadow] duration-200">
                   {popular && (
                     <span className="absolute top-4 right-4 px-2 py-0.5 bg-accent/10 border border-accent/25 rounded-full text-[10px] font-semibold text-accent uppercase tracking-wide">
                       Popular

@@ -81,10 +81,11 @@ body {
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform 0.1s ease;
   text-decoration: none;
 }
 .btn-primary:hover { background: #E4E4E7; }
+.btn-primary:active { transform: scale(0.97); }
 
 /* Accent button */
 .btn-accent {
@@ -99,10 +100,11 @@ body {
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform 0.1s ease;
   text-decoration: none;
 }
 .btn-accent:hover { background: var(--accent-dark); }
+.btn-accent:active { transform: scale(0.97); }
 
 /* Ghost button */
 .btn-ghost {
@@ -117,7 +119,7 @@ body {
   border-radius: 8px;
   border: 1px solid #3F3F46;
   cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
   text-decoration: none;
 }
 .btn-ghost:hover {
@@ -125,6 +127,7 @@ body {
   border-color: #52525B;
   color: #FAFAFA;
 }
+.btn-ghost:active { transform: scale(0.97); }
 
 /* Divider dot */
 .dot-accent {

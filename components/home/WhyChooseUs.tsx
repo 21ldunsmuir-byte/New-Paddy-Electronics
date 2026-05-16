@@ -58,9 +58,10 @@ export function WhyChooseUs() {
                 key={title}
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -4 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="p-5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-200"
+                className="p-5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:shadow-lg hover:shadow-black/30 transition-[border-color,box-shadow] duration-200"
               >
                 <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center mb-3">
                   <Icon className="w-4 h-4 text-accent" />

@@ -48,9 +48,10 @@ export function BranchesSection() {
               key={name}
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -4 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-zinc-950 rounded-xl border border-zinc-800 p-7"
+              className="bg-zinc-950 rounded-xl border border-zinc-800 hover:border-zinc-700 hover:shadow-lg hover:shadow-black/30 transition-[border-color,box-shadow] duration-200 p-7"
             >
               <div className="flex items-center justify-between mb-5">
                 <h3 className="font-display font-bold text-lg text-white">{name} Branch</h3>
