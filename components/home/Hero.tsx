@@ -23,7 +23,6 @@ export function Hero() {
           animate="visible"
           className="max-w-3xl"
         >
-          {/* Headline */}
           <motion.h1
             variants={item}
             className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-tight tracking-tight mb-5"
@@ -33,7 +32,6 @@ export function Hero() {
             <span className="text-accent">Specialists.</span>
           </motion.h1>
 
-          {/* Subheading */}
           <motion.p
             variants={item}
             className="text-lg text-zinc-400 leading-relaxed max-w-xl mb-8"
@@ -42,7 +40,6 @@ export function Hero() {
             fast with genuine parts. Two branches across Dublin since 2008.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div variants={item} className="flex flex-wrap gap-3 mb-12">
             <Link href="/contact" className="btn-accent">
               Book a Repair
@@ -57,7 +54,6 @@ export function Hero() {
             </a>
           </motion.div>
 
-          {/* Stats */}
           <motion.div variants={item} className="flex flex-wrap gap-8 pt-8 border-t border-zinc-800">
             {[
               { value: "16+", label: "Years in Dublin" },
