@@ -29,7 +29,7 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="New Paddy Electronics"
-                width={110}
+                width={80}
                 height={64}
                 className="object-contain"
               />

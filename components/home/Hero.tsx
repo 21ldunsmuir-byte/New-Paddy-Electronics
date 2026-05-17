@@ -50,7 +50,7 @@ export function Hero() {
           alt=""
           fill
           className="object-contain sm:object-cover object-center opacity-40 sm:opacity-50"
-          style={{ objectPosition: "center center" }}
+          style={{ objectPosition: "center 35%" }}
           priority
         />
         {/* Overlay */}
