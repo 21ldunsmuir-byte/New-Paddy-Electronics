@@ -6,28 +6,25 @@ import { ArrowRight, Phone } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-function CountUp({ to, suffix = "", decimals = 0, duration = 1.6, delay = 0 }: {
-  to: number; suffix?: string; decimals?: number; duration?: number; delay?: number;
+function CountUp({ to, suffix = "", decimals = 0, duration = 1.8, start }: {
+  to: number; suffix?: string; decimals?: number; duration?: number; start: boolean;
 }) {
-  const ref = useRef<HTMLSpanElement>(null);
   const motionVal = useMotionValue(0);
   const rounded = useTransform(motionVal, (v) => {
     const formatted = decimals === 0 ? Math.floor(v).toLocaleString() : v.toFixed(decimals);
     return `${formatted}${suffix}`;
   });
-  const inView = useInView(ref, { once: true, margin: "-40px" });
 
   useEffect(() => {
-    if (!inView) return;
+    if (!start) return;
     const controls = animate(motionVal, to, {
       duration,
-      delay,
       ease: [0.25, 0.1, 0.25, 1],
     });
     return controls.stop;
-  }, [inView, motionVal, to, duration, delay]);
+  }, [start, motionVal, to, duration]);
 
-  return <motion.span ref={ref} className="tabular-nums">{rounded}</motion.span>;
+  return <motion.span className="tabular-nums">{rounded}</motion.span>;
 }
 
 const container = {
@@ -40,6 +37,9 @@ const item = {
 };
 
 export function Hero() {
+  const statsRef = useRef<HTMLDivElement>(null);
+  const statsInView = useInView(statsRef, { once: true, margin: "-40px" });
+
   return (
     <section className="relative bg-zinc-950 border-b border-zinc-800 overflow-hidden min-h-[90vh] flex items-center">
 
@@ -95,17 +95,18 @@ export function Hero() {
 
           <motion.div
             variants={item}
+            ref={statsRef}
             className="flex flex-wrap justify-center gap-10 pt-8 border-t border-zinc-800"
           >
             {[
-              { to: 16, suffix: "+", label: "Years in Dublin", delay: 0 },
-              { to: 2, suffix: "", label: "Branch Locations", delay: 0.1 },
-              { to: 10000, suffix: "+", label: "Repairs Done", delay: 0.2 },
-              { to: 100, suffix: "%", label: "Genuine Parts", delay: 0.3 },
-            ].map(({ to, suffix, label, delay }) => (
+              { to: 16, suffix: "+", label: "Years in Dublin" },
+              { to: 2, suffix: "", label: "Branch Locations" },
+              { to: 10000, suffix: "+", label: "Repairs Done" },
+              { to: 100, suffix: "%", label: "Genuine Parts" },
+            ].map(({ to, suffix, label }) => (
               <div key={label} className="text-center">
                 <div className="font-display font-bold text-2xl text-white">
-                  <CountUp to={to} suffix={suffix} duration={1.8} delay={delay} />
+                  <CountUp to={to} suffix={suffix} start={statsInView} />
                 </div>
                 <div className="text-xs text-zinc-500 mt-0.5">{label}</div>
               </div>

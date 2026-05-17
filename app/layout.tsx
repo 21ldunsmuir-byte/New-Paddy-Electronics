@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     "Leopardstown phone repair",
   ],
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "New Paddy Electronics | Phone & Laptop Repairs Dublin",
