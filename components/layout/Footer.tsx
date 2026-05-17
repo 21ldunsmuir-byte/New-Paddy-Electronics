@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MapPin, Clock, Facebook, Instagram, Mail } from "lucide-react";
 
 const serviceLinks = [
@@ -24,14 +25,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2.5 mb-5">
-              <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white text-xs font-bold font-display">
-                NP
-              </div>
-              <div>
-                <div className="font-display font-bold text-sm text-white leading-none">New Paddy Electronics</div>
-                <div className="text-[10px] text-zinc-500 mt-0.5">Est. 2008 · Dublin, Ireland</div>
-              </div>
+            <Link href="/" className="inline-flex mb-5">
+              <Image
+                src="/logo.png"
+                alt="New Paddy Electronics"
+                width={110}
+                height={64}
+                className="object-contain"
+              />
             </Link>
             <p className="text-sm text-zinc-500 leading-relaxed mb-6">
               Dublin&apos;s trusted electronics repair specialists. Two convenient locations across the city.

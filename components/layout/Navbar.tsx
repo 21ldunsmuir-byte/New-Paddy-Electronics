@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
@@ -69,18 +70,14 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white text-xs font-bold font-display">
-              NP
-            </div>
-            <div>
-              <div className="font-display font-bold text-sm text-white leading-none tracking-tight">
-                New Paddy Electronics
-              </div>
-              <div className="text-[10px] text-zinc-600 tracking-wide mt-0.5">
-                Est. 2008 · Dublin
-              </div>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="New Paddy Electronics"
+              width={120}
+              height={70}
+              className="object-contain"
+            />
           </Link>
 
           {/* Desktop links */}
