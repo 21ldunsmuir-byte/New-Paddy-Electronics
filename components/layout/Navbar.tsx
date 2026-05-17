@@ -74,9 +74,9 @@ export function Navbar() {
             <Image
               src="/logo.png"
               alt="New Paddy Electronics"
-              width={62}
-              height={36}
-              className="object-contain"
+              width={90}
+              height={52}
+              className="object-contain w-[52px] md:w-[90px]"
             />
           </Link>
 
