@@ -41,7 +41,7 @@ export function Hero() {
   const statsInView = useInView(statsRef, { once: true, margin: "-40px" });
 
   return (
-    <section className="relative bg-zinc-950 border-b border-zinc-800 overflow-hidden min-h-[90vh] flex items-center">
+    <section className="relative bg-zinc-950 border-b border-zinc-800 overflow-hidden min-h-[70vh] sm:min-h-[90vh] flex items-center">
 
       {/* Background — laptop exploded image */}
       <div className="absolute inset-0 z-0">
@@ -49,11 +49,12 @@ export function Hero() {
           src="/laptop-exploded.png"
           alt=""
           fill
-          className="object-cover object-center opacity-50"
+          className="object-cover object-center opacity-20 sm:opacity-50"
+          style={{ objectPosition: "center 40%" }}
           priority
         />
-        {/* Gradient overlays to blend edges and ensure text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-zinc-950/60" />
+        {/* Heavier overlay on mobile, lighter on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/80 sm:via-zinc-950/40 sm:to-zinc-950/60" />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/40 via-transparent to-zinc-950/40" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-950 to-transparent" />
       </div>
