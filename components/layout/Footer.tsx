@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, MapPin, Clock, Facebook, Linkedin, Mail } from "lucide-react";
+import { Phone, MapPin, Clock, Facebook, Instagram, Mail } from "lucide-react";
 
 const serviceLinks = [
   { label: "iPhone Repairs", href: "/services/iphone-repairs" },
@@ -38,9 +38,9 @@ export function Footer() {
             </p>
             <div className="flex gap-2">
               {[
-                { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-                { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:info@newpaddy.ie", label: "Email" },
+                { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100007877385460", label: "Facebook" },
+                { icon: Instagram, href: "https://www.instagram.com/newpaddyelectronics/", label: "Instagram" },
+                { icon: Mail, href: "mailto:newpaddyleopardstown@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
