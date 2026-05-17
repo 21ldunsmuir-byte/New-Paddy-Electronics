@@ -56,10 +56,10 @@ export function ServicesSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45 }}
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 0.25 }}
           className="mb-12"
         >
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white leading-tight mb-3">
@@ -75,11 +75,11 @@ export function ServicesSection() {
           {services.map(({ icon: Icon, title, description, href, popular }, i) => (
             <motion.div
               key={title}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -4 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.22, delay: i * 0.03 }}
             >
               <Link href={href} className="group block h-full">
                 <div className="relative h-full p-6 rounded-xl bg-zinc-950 border border-zinc-800 hover:border-zinc-700 hover:shadow-lg hover:shadow-black/30 transition-[border-color,box-shadow] duration-200">

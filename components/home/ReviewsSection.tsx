@@ -46,10 +46,10 @@ export function ReviewsSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45 }}
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 0.25 }}
           className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10"
         >
           <div>
@@ -86,10 +86,10 @@ export function ReviewsSection() {
           {reviews.map(({ name, rating, date, text, badge }, i) => (
             <motion.div
               key={name}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.22, delay: i * 0.03 }}
               whileHover={{ y: -4 }}
               className="flex flex-col bg-zinc-900 rounded-xl border border-zinc-800 p-6 hover:border-zinc-700 hover:shadow-lg hover:shadow-black/30 transition-[border-color,box-shadow] duration-200"
             >
@@ -123,10 +123,10 @@ export function ReviewsSection() {
 
         {/* Google badge strip */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 0.22, delay: 0.06 }}
           className="mt-4 flex items-center justify-center gap-2 text-xs text-zinc-600"
         >
           <svg viewBox="0 0 24 24" className="w-4 h-4" aria-hidden="true">

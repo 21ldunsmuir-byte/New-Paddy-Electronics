@@ -31,10 +31,10 @@ export function BranchesSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45 }}
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 0.25 }}
           className="mb-10"
         >
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white leading-tight">
@@ -46,11 +46,11 @@ export function BranchesSection() {
           {branches.map(({ name, address, phone, tel, hours, note, mapUrl }, i) => (
             <motion.div
               key={name}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -4 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.22, delay: i * 0.03 }}
               className="bg-zinc-950 rounded-xl border border-zinc-800 hover:border-zinc-700 hover:shadow-lg hover:shadow-black/30 transition-[border-color,box-shadow] duration-200 p-7"
             >
               <div className="flex items-center justify-between mb-5">
@@ -97,10 +97,10 @@ export function BranchesSection() {
 
         {/* CTA strip */}
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.15 }}
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 0.22, delay: 0.05 }}
           className="mt-4 px-6 py-5 rounded-xl border border-zinc-800 bg-zinc-950 flex flex-col sm:flex-row items-center justify-between gap-3"
         >
           <p className="text-sm text-zinc-400">Not sure which branch to visit? Send us a message.</p>

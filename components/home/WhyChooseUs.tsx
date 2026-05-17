@@ -19,10 +19,10 @@ export function WhyChooseUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left */}
           <motion.div
-            initial={{ opacity: 0, x: -16 }}
+            initial={{ opacity: 0, x: -8 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.05 }}
+            transition={{ duration: 0.25 }}
           >
             <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white leading-tight mb-5">
               Why New Paddy<br />Electronics?
@@ -56,11 +56,11 @@ export function WhyChooseUs() {
             {reasons.map(({ icon: Icon, title, description }, i) => (
               <motion.div
                 key={title}
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -4 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 0.22, delay: i * 0.03 }}
                 className="p-5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:shadow-lg hover:shadow-black/30 transition-[border-color,box-shadow] duration-200"
               >
                 <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center mb-3">
