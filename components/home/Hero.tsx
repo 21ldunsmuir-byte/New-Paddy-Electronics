@@ -1,9 +1,39 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+
+function CountUp({ to, suffix = "", prefix = "", decimals = 0, duration = 1.6, delay = 0 }: {
+  to: number; suffix?: string; prefix?: string; decimals?: number; duration?: number; delay?: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const motionVal = useMotionValue(0);
+  const rounded = useTransform(motionVal, (v) => {
+    const fixed = v.toFixed(decimals);
+    const formatted = decimals === 0 ? Math.floor(v).toLocaleString() : fixed;
+    return `${prefix}${formatted}${suffix}`;
+  });
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(motionVal, to, {
+      duration,
+      delay,
+      ease: [0.25, 0.1, 0.25, 1],
+    });
+    return controls.stop;
+  }, [inView, motionVal, to, duration, delay]);
+
+  return (
+    <motion.span ref={ref} className="tabular-nums">
+      {rounded}
+    </motion.span>
+  );
+}
 
 const container = {
   hidden: {},
@@ -60,13 +90,15 @@ export function Hero() {
 
             <motion.div variants={item} className="flex flex-wrap gap-8 pt-8 border-t border-zinc-800">
               {[
-                { value: "16+", label: "Years in Dublin" },
-                { value: "2", label: "Branch Locations" },
-                { value: "10,000+", label: "Repairs Done" },
-                { value: "100%", label: "Genuine Parts" },
-              ].map(({ value, label }) => (
+                { to: 16, suffix: "+", label: "Years in Dublin", delay: 0 },
+                { to: 2, suffix: "", label: "Branch Locations", delay: 0.1 },
+                { to: 10000, suffix: "+", label: "Repairs Done", delay: 0.2 },
+                { to: 100, suffix: "%", label: "Genuine Parts", delay: 0.3 },
+              ].map(({ to, suffix, label, delay }) => (
                 <div key={label}>
-                  <div className="font-display font-bold text-2xl text-white">{value}</div>
+                  <div className="font-display font-bold text-2xl text-white">
+                    <CountUp to={to} suffix={suffix} duration={1.8} delay={delay} />
+                  </div>
                   <div className="text-xs text-zinc-500 mt-0.5">{label}</div>
                 </div>
               ))}
