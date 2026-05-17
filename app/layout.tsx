@@ -18,6 +18,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://project-zgfdk.vercel.app"),
   title: {
     default: "New Paddy Electronics | Phone & Laptop Repairs Dublin",
     template: "%s | New Paddy Electronics",
