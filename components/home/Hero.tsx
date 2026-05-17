@@ -49,12 +49,12 @@ export function Hero() {
           src="/laptop-exploded.png"
           alt=""
           fill
-          className="object-cover object-center opacity-20 sm:opacity-50"
-          style={{ objectPosition: "center 40%" }}
+          className="object-contain sm:object-cover object-center opacity-40 sm:opacity-50"
+          style={{ objectPosition: "center center" }}
           priority
         />
-        {/* Heavier overlay on mobile, lighter on desktop */}
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/80 sm:via-zinc-950/40 sm:to-zinc-950/60" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-zinc-950/70 sm:via-zinc-950/40 sm:to-zinc-950/60" />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/40 via-transparent to-zinc-950/40" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-950 to-transparent" />
       </div>
